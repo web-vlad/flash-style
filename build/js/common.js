@@ -162,7 +162,7 @@ $(document).ready(function() {
     });
 
     // PORTFOLIO SLIDER
-    /*$('.slider-nav').slick({
+    $('.slider-nav').slick({
         //vertical:true,
         slidesToShow: 40,
         //slidesToScroll: 1,
@@ -186,14 +186,14 @@ $(document).ready(function() {
                 }
             }
         ]
-    });*/
+    });
 
-
+/*  // LIGHT GALLERY PORTFOLIO
     $('#gallery img').click(function(){
         //получаем адрес картинки из дата-тега:
         var adress=$(this).data('src')
         //устанавливаем полученное значение в src основной картинки
         $('#big img').attr('src',adress)
-    })
+    })*/
 
 });
