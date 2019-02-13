@@ -161,6 +161,41 @@ $(document).ready(function() {
         ]
     });
 
+    // PORTFOLIO SLIDER
+    /*$('.slider-nav').slick({
+        //vertical:true,
+        slidesToShow: 40,
+        //slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        focusOnSelect: true,
+    });
+
+    $('.slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slider-nav',
+        responsive: [
+            {
+                breakpoint: 460,
+                settings: {
+                    //arrows: true,
+                    nextArrow: '<span class="slick-prev slick-arrow icon-arrow-left2"></span>',
+                    prevArrow: '<span class="slick-next slick-arrow icon-arrow-right2"></span>',
+                }
+            }
+        ]
+    });*/
+
+
+    $('#gallery img').click(function(){
+        //получаем адрес картинки из дата-тега:
+        var adress=$(this).data('src')
+        //устанавливаем полученное значение в src основной картинки
+        $('#big img').attr('src',adress)
+    })
+
 });
 
 

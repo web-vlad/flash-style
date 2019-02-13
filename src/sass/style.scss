@@ -866,4 +866,44 @@ h1, h2, h3, h4, strong, b {
     }
 }
 
+/* ! == PORTFOLIO == */
+.callery-image {
+    margin: 0 -4px;
+    .col {
+        padding: 0 4px;
+        margin-bottom: 10px;
+    }
+}
+.callery-image {
+    margin-top: 30px;
+    .callery-image__image {
+        position: relative;
+        display: block;
+        line-height: 0;
+        overflow: hidden;
+        margin-bottom: 25px;
+        cursor: pointer;
+        /*&:after {
+            background: rgba(0,0,0,0.2);
+            @include all-pseudo();
+            @include all-transition();
+            opacity: 0;
+        }*/
+        img {
+            position: relative;
+            width: 100%;
+            @include transform-position();
+            @include img-transition();
+        }
+        &:hover {
+            /*&:after {
+                opacity: 1;
+            }*/
+            img {
+                @include scale();
+            }
+        }
+    }
+}
+
 @import "footer";
