@@ -161,39 +161,14 @@ $(document).ready(function() {
         ]
     });
 
-    // PORTFOLIO SLIDER
-    $('.slider-nav').slick({
-        //vertical:true,
-        slidesToShow: 40,
-        //slidesToScroll: 1,
-        asNavFor: '.slider-for',
-        focusOnSelect: true,
+    // PORTFOLIO
+
+    $a = $('.item-portfolio');
+    $a.on('click', function(event) {
+        event.preventDefault();
+        $a.not(this).parent().removeClass('active');
+        $(this).parent().toggleClass('active');
     });
 
-    $('.slider-for').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        fade: true,
-        asNavFor: '.slider-nav',
-        responsive: [
-            {
-                breakpoint: 460,
-                settings: {
-                    //arrows: true,
-                    nextArrow: '<span class="slick-prev slick-arrow icon-arrow-left2"></span>',
-                    prevArrow: '<span class="slick-next slick-arrow icon-arrow-right2"></span>',
-                }
-            }
-        ]
-    });
-
-/*  // LIGHT GALLERY PORTFOLIO
-    $('#gallery img').click(function(){
-        //получаем адрес картинки из дата-тега:
-        var adress=$(this).data('src')
-        //устанавливаем полученное значение в src основной картинки
-        $('#big img').attr('src',adress)
-    })*/
 
 });

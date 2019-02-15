@@ -867,21 +867,50 @@ h1, h2, h3, h4, strong, b {
 }
 
 /* ! == PORTFOLIO == */
-.callery-image {
-    margin: 0 -4px;
+.portfolio {
+    position: relative;
+    margin: 30px -4px 0;
     .col {
+        flex-basis: 25%;
+        -ms-flex-preferred-size: 25%;
+        max-width: 25%;
         padding: 0 4px;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
+        @include img-transition();
+        &.active {
+            flex-basis: 100%;
+            -ms-flex-preferred-size: 100%;
+            max-width: 100%;
+            margin: 10px 0;
+            .portfolio__img:hover {
+                img {
+                    transform: scale(1);
+                    -moz-transform: scale(1);
+                    -webkit-transform: scaleX(1);
+                    -o-transform: scale(1);
+                    -ms-transform: scale(1);
+                }
+            }
+        }
     }
 }
-.callery-image {
-    margin-top: 30px;
-    .callery-image__image {
+.portfolio-2 {
+    .col {
+        &.active {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 5;
+        }
+    }
+}
+.item-portfolio {
+    .portfolio__img {
         position: relative;
         display: block;
         line-height: 0;
         overflow: hidden;
-        margin-bottom: 25px;
         cursor: pointer;
         /*&:after {
             background: rgba(0,0,0,0.2);
@@ -905,30 +934,18 @@ h1, h2, h3, h4, strong, b {
         }
     }
 }
-
-.preview-image {
-    margin: 30px -4px 0;
-}
-.slider-nav {
-    .slick-track {
-        width: 100% !important;
-        display: flex;
-        display: -ms-flexbox;
-        flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-    }
-    .slick-slide {
-        float: none;
-        flex-basis: 25%;
-        -ms-flex-preferred-size: 25%;
-        max-width: 25%;
-        padding: 0 4px;
-        margin-bottom: 8px;
+@media (max-width: 1024px) {
+    .portfolio-2 {
+        .col {
+            &.active {
+                position: fixed;
+            }
+        }
     }
 }
 @media (max-width: 991px) {
-    .slider-nav {
-        .slick-slide {
+    .portfolio {
+        .col {
             flex-basis: 33.3333%;
             -ms-flex-preferred-size: 33.3333%;
             max-width: 33.3333%;
@@ -943,8 +960,8 @@ h1, h2, h3, h4, strong, b {
     }
 }
 @media (max-width: 420px) {
-    .slider-nav {
-        .slick-slide {
+    .portfolio {
+        .col {
             flex-basis: 50%;
             -ms-flex-preferred-size: 50%;
             max-width: 50%;
